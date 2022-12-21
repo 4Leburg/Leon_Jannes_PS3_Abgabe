@@ -1,7 +1,6 @@
 <script>
 	import P5 from 'p5-svelte';
 	import Ml5 from '$lib/components/Ml5.svelte';
-
 	let classifier;
 	let video;
 	let results = [];
@@ -34,7 +33,11 @@
 	const mlSketch = (domElement, ml5, modelReady) => {
 		// Here you could load another image classification model
 		// OR you could load your custom model from teachable machine
-		classifier = ml5.imageClassifier('MobileNet', video, modelReady);
+		classifier = ml5.imageClassifier(
+			'/custom-model-hand-thumb-peace/model.json',
+			video,
+			modelReady
+		);
 	};
 
 	const mlReady = () => {
@@ -51,16 +54,26 @@
 			results = res;
 			// console.log(results);
 			classifyVideo();
+
+			const fridge = results.filter(fridge => fridge.confidence > 0.9);
+				console.log(fridge);
+
+			// if (result.confidence > 0.8) {
+			// 	console.log(test);
+			// }
 		}
 	};
+
+	
+
 </script>
 
-<h1>Image Classifier Example ported from ML5</h1>
-<p>
+<h1>SCAN YOUR ITEMS</h1>
+<!-- <p>
 	This example modifies the code found here: <a
 		href="https://learn.ml5js.org/#/reference/image-classifier">ML5 Image Classifier</a
 	>
-</p>
+</p> -->
 
 {#if sketch}
 	<P5 {sketch} />
@@ -69,3 +82,4 @@
 		<p>{result.label}: confidence: {result.confidence}</p>
 	{/each}
 {/if}
+

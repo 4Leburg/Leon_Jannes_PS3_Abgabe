@@ -1,15 +1,8 @@
 <script>
 	import { getStores, navigating, page, updated } from '$app/stores';
 	const pages = [
-		'/',
-		'/facemesh',
-		'/handpose',
-		'/imageclassifier',
-		'/objectdetector',
-		'/posenet',
-		'/teachable-machine',
-		'/withoutp5',
-		'/huggingface'
+		'/Home',
+		'/SCANNER',
 	];
 
 	console.log();
