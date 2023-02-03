@@ -1,0 +1,33 @@
+FRIDA
+
+This project is a simple web application using Svelte and P5.js for image classification. The app is trained to classify images of three ingredients: Pasta, Pepper, and Avocado.
+
+//
+
+The following libraries are used in this project:
+
+P5-Svelte
+Ml5
+Svelte/store
+Navbar
+Features
+
+Live video capture and image classification
+Ability to add ingredients to a list when recognized by the classifier
+Storing the ingredients in local storage
+Option to remove ingredients from the list
+
+//
+
+How to run the project:
+
+Clone the repository
+Run npm install in the project directory to install all dependencies
+Run npm run dev to start a local development server
+Open your browser and go to http://localhost:5000 to view the app
+IMPORTANT: Switch to Iphone screen Resolution and click on one of the Buttons in the Navbar.
+(The SCANNER feature, is the feature that is fully functional, while the other parts of the Navbar are only placeholders).
+
+The image classification model is a custom one trained by teachable machine and is located in the /pasta-pepper-avocado/model.json directory.
+The width and height for the camera is set to 487.5 and 390 respectively.
+The video element is hidden and only the canvas is shown in the final display.
